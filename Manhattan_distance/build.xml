@@ -1,0 +1,23 @@
+<project name="manhattan-distance" default="run">
+	
+	<property name="src.dir" location="src"/>
+	<property name="build.dir" location="bin"/>
+	<property name="Main" value="Manhattandistance"/>
+	
+	<target name="init" description="Initializates the project.">
+		<mkdir dir="${build.dir}"/>
+	</target>
+	
+	<target name="compile" depends="init" description="Compiles the project.">
+		<javac srcdir="${src.dir}" destdir="${build.dir}"/>
+	</target>
+	
+	<target name="clean" description="Cleans the project.">
+		<delete dir="${build.dir}" />
+	</target>
+	
+	<target name="run" depends="compile" description="Runs the project.">
+		<java classname="${Main}" classpath="${build.dir}"/>
+	</target>
+	
+</project>
